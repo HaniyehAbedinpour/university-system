@@ -12,6 +12,13 @@ class Student(models.Model):
         related_name='students'
     )
 
+
+    courses = models.ManyToManyField(
+        "courses.Course",
+        related_name="students",
+        blank=True
+    )
+
     def __str__(self):
         return f'{self.name} | {self.student_id}'
     
