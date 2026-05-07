@@ -4,5 +4,6 @@ from .models import Student
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('id','name','student_code')
-    search_fields = ('name','student_code')
+    list_display = ('id', 'name', 'student_id', 'department')
+    search_fields = ('name', 'student_id')
+    list_filter = ('department',)
